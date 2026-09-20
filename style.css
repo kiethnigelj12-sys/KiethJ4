@@ -1,0 +1,518 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    padding: 30px;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1a103d,
+            #30145e,
+            #54258a,
+            #7b3fb3
+        );
+
+    background-attachment: fixed;
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+.header h1 {
+
+    margin: 0;
+
+    font-size: 32px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.header p {
+
+    margin-top: 10px;
+
+    color: #d7b8ff;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================
+   TITLES
+========================================= */
+
+.current-section h2,
+.graph-section h2,
+.previous-section h2 {
+
+    text-align: center;
+
+    font-size: 21px;
+
+    margin-bottom: 22px;
+
+}
+
+
+/* =========================================
+   CURRENT VALUES
+========================================= */
+
+.current-section {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+}
+
+
+.values-container {
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+
+.value-box {
+
+    flex: 1;
+
+    min-height: 220px;
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.20
+        );
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+.value-icon {
+
+    font-size: 40px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.value-label {
+
+    color: #e5caff;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+
+}
+
+
+.value-number {
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+}
+
+
+.value-unit {
+
+    margin-top: 5px;
+
+    color: #d7b8ff;
+
+}
+
+
+/* =========================================
+   GRAPH
+========================================= */
+
+.graph-section {
+
+    max-width: 1000px;
+
+    margin:
+        55px
+        auto
+        30px;
+
+}
+
+
+.graph-container {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 430px;
+
+    padding: 25px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.20
+        );
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+#sensorChart {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+}
+
+
+/* =========================================
+   PREVIOUS READINGS
+========================================= */
+
+.previous-section {
+
+    max-width: 1000px;
+
+    margin:
+        55px
+        auto
+        30px;
+
+}
+
+
+.date-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 22px;
+
+    padding: 18px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.20
+        );
+
+    border-radius: 15px;
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+.date-container label {
+
+    font-weight: bold;
+
+}
+
+
+#dateSelect {
+
+    min-width: 190px;
+
+    padding:
+        11px
+        14px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.30
+        );
+
+    background:
+        rgba(
+            35,
+            10,
+            70,
+            0.90
+        );
+
+    color: white;
+
+    outline: none;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-container {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.20
+        );
+
+    border-radius: 15px;
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+
+#readingsTable {
+
+    width: 100%;
+
+    min-width: 650px;
+
+    border-collapse:
+        collapse;
+
+}
+
+
+#readingsTable th {
+
+    padding: 15px;
+
+    background:
+        rgba(
+            90,
+            35,
+            145,
+            0.85
+        );
+
+    font-size: 14px;
+
+}
+
+
+#readingsTable td {
+
+    padding: 14px;
+
+    text-align: center;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+}
+
+
+#readingsTable tbody tr:hover td {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    body {
+
+        padding: 18px;
+
+    }
+
+
+    .header h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .values-container {
+
+        flex-direction: column;
+
+    }
+
+
+    .value-box {
+
+        width: 100%;
+
+    }
+
+
+    .date-container {
+
+        flex-direction: column;
+
+    }
+
+
+    #dateSelect {
+
+        width: 100%;
+
+    }
+
+
+    .graph-container {
+
+        height: 330px;
+
+        padding: 12px;
+
+    }
+
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nigel WiFi Manager</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1a103d,
+                    #30145e,
+                    #54258a,
+                    #7b3fb3
+                );
+
+        }
+
+
+        .container {
+
+            width: 100%;
+
+            max-width: 500px;
+
+            padding: 30px;
+
+            border-radius: 22px;
+
+            background:
+                rgba(255, 255, 255, 0.12);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.25);
+
+            backdrop-filter:
+                blur(15px);
+
+            box-shadow:
+                0 15px 40px
+                rgba(0, 0, 0, 0.35);
+
+        }
+
+
+        h1 {
+
+            margin-top: 0;
+
+            margin-bottom: 8px;
+
+            text-align: center;
+
+            font-size: 28px;
+
+        }
+
+
+        .subtitle {
+
+            margin-top: 0;
+
+            margin-bottom: 28px;
+
+            text-align: center;
+
+            color: #e9d5ff;
+
+            font-size: 14px;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #f3e8ff;
+
+            font-weight: bold;
+
+        }
+
+
+        input {
+
+            width: 100%;
+
+            padding: 13px 14px;
+
+            margin-bottom: 18px;
+
+            border-radius: 10px;
+
+            border:
+                1px solid
+                rgba(216, 180, 254, 0.5);
+
+            outline: none;
+
+            background:
+                rgba(0, 0, 0, 0.20);
+
+            color: white;
+
+            font-size: 15px;
+
+        }
+
+
+        input::placeholder {
+
+            color:
+                rgba(255,255,255,0.55);
+
+        }
+
+
+        input:focus {
+
+            border-color:
+                #d8b4fe;
+
+            box-shadow:
+                0 0 12px
+                rgba(216, 180, 254, 0.30);
+
+        }
+
+
+        button {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7e3fb2,
+                    #a855f7
+                );
+
+            box-shadow:
+                0 8px 20px
+                rgba(0, 0, 0, 0.25);
+
+            transition:
+                transform 0.2s,
+                opacity 0.2s;
+
+        }
+
+
+        button:hover {
+
+            transform:
+                translateY(-2px);
+
+            opacity: 0.92;
+
+        }
+
+
+        .note {
+
+            margin-top: 20px;
+
+            padding: 13px;
+
+            border-radius: 10px;
+
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            color: #e9d5ff;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+            text-align: center;
+
+        }
+
+
+        .footer {
+
+            margin-top: 25px;
+
+            text-align: center;
+
+            color:
+                rgba(255,255,255,0.55);
+
+            font-size: 12px;
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .container {
+
+                padding: 22px;
+
+            }
+
+
+            h1 {
+
+                font-size: 24px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <h1>
+            📶 Nigel WiFi Manager
+        </h1>
+
+
+        <p class="subtitle">
+            Activity 4 • DHT11 Monitoring
+        </p>
+
+
+        <form
+            method="POST"
+            action="/"
+        >
+
+
+            <label for="ssid">
+                WiFi SSID
+            </label>
+
+            <input
+                type="text"
+                id="ssid"
+                name="ssid"
+                placeholder="Enter WiFi name"
+                required
+            >
+
+
+            <label for="pass">
+                WiFi Password
+            </label>
+
+            <input
+                type="password"
+                id="pass"
+                name="pass"
+                placeholder="Enter WiFi password"
+            >
+
+
+            <label for="ip">
+                IP Address
+            </label>
+
+            <input
+                type="text"
+                id="ip"
+                name="ip"
+                placeholder="Optional - leave blank for DHCP"
+            >
+
+
+            <label for="gateway">
+                Gateway
+            </label>
+
+            <input
+                type="text"
+                id="gateway"
+                name="gateway"
+                placeholder="Optional - leave blank for DHCP"
+            >
+
+
+            <button type="submit">
+                SAVE & CONNECT
+            </button>
+
+
+        </form>
+
+
+        <div class="note">
+
+            💡 Leave IP Address and Gateway
+            blank if you want the ESP32 to
+            automatically use DHCP.
+
+        </div>
+
+
+        <div class="footer">
+
+            NIGEL • ACTIVITY 4
+
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
