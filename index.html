@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nigel - DHT11 Monitoring</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="header">
+
+        <h1>
+            Kieth Nigel Jacaba
+        </h1>
+
+        <p>
+            Realtime Temperature & Humidity Monitoring
+        </p>
+
+    </header>
+
+
+    <!-- =========================================
+         CURRENT VALUES
+    ========================================== -->
+
+    <section class="current-section">
+
+        <h2>
+            CURRENT VALUES
+        </h2>
+
+
+        <div class="values-container">
+
+
+            <div class="value-box">
+
+                <div class="value-icon">
+                    🌡️
+                </div>
+
+                <div class="value-label">
+                    TEMPERATURE
+                </div>
+
+                <div
+                    id="currentTemperature"
+                    class="value-number"
+                >
+                    --
+                </div>
+
+                <div class="value-unit">
+                    °C
+                </div>
+
+            </div>
+
+
+            <div class="value-box">
+
+                <div class="value-icon">
+                    💧
+                </div>
+
+                <div class="value-label">
+                    HUMIDITY
+                </div>
+
+                <div
+                    id="currentHumidity"
+                    class="value-number"
+                >
+                    --
+                </div>
+
+                <div class="value-unit">
+                    %
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         GRAPH
+    ========================================== -->
+
+    <section class="graph-section">
+
+        <h2>
+            SENSOR GRAPH
+        </h2>
+
+
+        <div class="graph-container">
+
+            <canvas
+                id="sensorChart"
+            ></canvas>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PREVIOUS READINGS
+    ========================================== -->
+
+    <section class="previous-section">
+
+        <h2>
+            PREVIOUS READINGS
+        </h2>
+
+
+        <!-- ONLY ONE SELECT DATE -->
+
+        <div class="date-container">
+
+            <label for="dateSelect">
+                SELECT DATE:
+            </label>
+
+
+            <select id="dateSelect">
+
+                <option value="">
+                    Select Date
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table id="readingsTable">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            DATE
+                        </th>
+
+                        <th>
+                            TIME
+                        </th>
+
+                        <th>
+                            TEMPERATURE
+                        </th>
+
+                        <th>
+                            HUMIDITY
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="readingsBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CHART.JS
+    ========================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js"
+    ></script>
+
+
+    <!-- =========================================
+         FIREBASE SCRIPT
+    ========================================== -->
+
+    <script
+        type="module"
+        src="script.js"
+    ></script>
+
+
+</body>
+
+</html>
